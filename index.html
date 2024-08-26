@@ -1,1 +1,176 @@
-<!DOCTYPE html><html itemscope itemtype=http://schema.org/WebPage lang=en><head><meta charset=utf-8><meta http-equiv=x-ua-compatible content="ie=edge"><meta name=viewport content="width=device-width,initial-scale=1"><title>Sean Murrin / Web Portfolio</title><meta name=description content="A realistic sky background"><meta name=url content=https://seanmurrin.com/ ><link href=https://cdnjs.cloudflare.com/ajax/libs/normalize/4.2.0/normalize.min.css rel=stylesheet><link href=/static/css/app.959629e7609f4a718e9b71347d206b59.css rel=stylesheet></head><body><app></app><script type=text/javascript src=/static/js/manifest.249a314f91f3eeb6161e.js></script><script type=text/javascript src=/static/js/vendor.3e109c82d5f788e31777.js></script><script type=text/javascript src=/static/js/app.791873e6e8fdf07e988b.js></script></body></html>
+<!DOCTYPE html>
+<html itemscope itemtype=http://schema.org/WebPage lang=en>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv=x-ua-compatible content="ie=edge">
+  <meta name=viewport content="width=device-width,initial-scale=1">
+  <title>Sean Murrin</title>
+  <style>
+    body {
+      font-family: ui-sans-serif, system-ui, sans-serif;
+      line-height: 1.5;
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 0 8px;
+    }
+
+    section {
+      margin-bottom: 2rem;
+    }
+
+    section h3 {
+      margin-bottom: 0.5rem;
+      border-bottom: 1px solid #7b7b7c;
+    }
+
+    .code-block {
+      position: relative;
+    }
+
+    .code-block button {
+      position: absolute;
+      top: 5px;
+      right: 5px;
+
+      font-size: 0.9rem;
+      padding: 0.15rem;
+      background-color: #efefef;
+      border: ridge 1px #7b7b7c;
+      border-radius: 5px;
+    }
+
+    .code-block button:hover {
+      cursor: pointer;
+      background-color: #d6d5d5;
+    }
+
+    pre {
+      position: relative;
+      background: #f8f8f8;
+      padding: 1rem;
+      border-radius: 10px;
+      overflow-x: auto;
+      font-family: monospace;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      html { background: #1c1c1c; color: white; }
+      a { color: #6bf; }
+      a:visited { color: #f8f; }
+      a:active { color: red; }
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Stuff</h1>
+
+  <p>I Don't really have need for this website at the moment, so just putting some stuff here.</p>
+
+  <section>
+    <h3>Links</h3>
+
+    <ul>
+      <li>
+        <a href="https://news.ycombinator.com/">Hacker News</a>
+      </li>
+
+      <li>
+        <a href="https://en.wikipedia.org/wiki/Special:Random">Random Wiki</a>
+      </li>
+
+      <li>
+        <a href="https://www.sixdegreesofwikipedia.com/">Six Degrees of Wikipedia</a>
+      </li>
+
+      <li>
+        <a href="https://theuselessweb.com/">The Useless Web</a>
+      </li>
+
+      <li>
+        <a href="https://simone.computer/#/">Simone's Computer</a>
+      </li>
+
+      <li>
+        <a href="https://aerial-screensavers.netlify.app/">Apple TV Screensavers</a>
+      </li>
+
+      <li>
+        <a href="https://listentoamovie.com/">Listen To A Movie</a>
+      </li>
+
+      <li>
+        <a href="https://www.tide-forecast.com/locations/Brighton/tides/latest">Tide Forecast</a>
+      </li>
+
+      <li>
+        <a href="https://diskprices.com/?locale=uk&condition=new&disk_types=external_hdd,external_hdd25,internal_hdd,internal_hdd25,internal_sshd,internal_sas,external_ssd,internal_ssd,m2_ssd,m2_nvme,u2">Disk Prices</a>
+      </li>
+
+      <li>
+        <a href="https://mail.tm/en/">Temp Mail</a>
+      </li>
+
+      <li>
+        <a href="https://www.photopea.com/">Photopea</a>
+      </li>
+
+      <li>
+        <a href="https://www.astro.sunysb.edu/fwalter/AST389/ASoundofThunder.pdf">A Sound of Thunder</a>
+      </li>
+    </ul>
+  </section>
+
+  <section>
+    <h3>Bookmarklets</h3>
+
+    <p><small><i>A bookmarklet is a bookmark stored in a web browser that contains JavaScript commands that add new features to the browser. They are stored as the URL of a bookmark in a web browser or as a hyperlink on a web page. Bookmarklets are usually small snippets of JavaScript executed when user clicks on them. When clicked, bookmarklets can perform a wide variety of operations, such as running a search query from selected text or extracting data from a table.</i></small> <a href="https://en.wikipedia.org/wiki/Bookmarklet">Wikipedia</a></p>
+
+    <p>To use these bookmarklets, Go to your bookmark manager, and click 'Add Bookmark', then copy and paste the code below into the 'URL' field. Use a descriptive name for your bookmark.</p>
+
+
+    <div>
+      <h4>Amazon Price History</h4>
+
+      <p>When viewing a product on amazon, clicking this bookmark will open a new window with a price history chart.</p>
+
+      <div class="code-block">
+        <pre><code>javascript:(function()%7B window.open(%27https://keepa.com/#!search/1-%27%2BencodeURIComponent(window.location))%7D)()</code></pre>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h3>Important Information</h3>
+    <br/>
+    <img src="media/elephant.webp" alt="An elephant" style="width: 100%">
+  </section>
+
+  <script>
+    const blocks = document.querySelectorAll(".code-block");
+    const copyButtonLabel = "Copy Code";
+
+    blocks.forEach((block) => {
+      if (navigator.clipboard) {
+        const button = document.createElement("button");
+
+        block.appendChild(button);
+        button.innerText = copyButtonLabel;
+        button.addEventListener("click", async () => await copyCode(block, button));
+      }
+    });
+
+    async function copyCode(block, button) {
+      let code = block.querySelector("code");
+      let text = code.innerText;
+
+      await navigator.clipboard.writeText(text);
+
+      button.innerText = "Code Copied";
+
+      setTimeout(() => button.innerText = copyButtonLabel, 700);
+    }
+
+  </script>
+</body>
+</html>
